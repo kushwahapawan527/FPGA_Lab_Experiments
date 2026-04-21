@@ -67,6 +67,13 @@ The counter follows **priority-based operation**:
 | up_down = 0 | count--         |
 
 ---
+## 🔍 Async vs Sync Comparison
+
+| Feature | Async Reset | Sync Reset |
+|--------|------------|-----------|
+| Reset Timing | Immediate | Clock edge |
+| Stability | Less | More |
+| Design | Simple | Controlled |
 
 ## 🧩 Block Diagram
 
@@ -101,13 +108,11 @@ end
 
 ## 🧪 Simulation Result
 
-✔ Reset works instantly
-✔ Load works at clock edge
-✔ Up counting increases sequentially
-✔ Down counting decreases correctly
+### 🔹 Asynchronous Counter
+![Async Waveform](waveform_async.png)
 
-![Waveform](waveform_async.png)
-
+### 🔹 Synchronous Counter
+![Sync Waveform](waveform_sync.png)
 ---
 
 ## 🛠️ Tools Used
