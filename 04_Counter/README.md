@@ -1,63 +1,95 @@
-# 🔢 Experiment 4: 8-bit Up/Down Counter
+# 🧮 Experiment 4: 8-bit Up/Down Counter
 
 ## 🎯 Objective
-
-To design and simulate an 8-bit up/down counter with asynchronous reset and synchronous load using Verilog HDL.
+Design and simulate an 8-bit up/down counter with:
+- Asynchronous Reset
+- Synchronous Load
+- Up/Down Counting Control  
+using Verilog HDL.
 
 ---
 
 ## 📘 Description
-
-This counter can:
-
-* Increment (Up Count)
-* Decrement (Down Count)
-* Load a specific value
-* Reset asynchronously
+An 8-bit counter capable of:
+- Counting Up (Increment)
+- Counting Down (Decrement)
+- Loading a custom value
+- Immediate reset (asynchronous)
 
 ---
 
 ## ⚙️ Features
-
-* 8-bit counter
-* Asynchronous reset
-* Synchronous load
-* Up/Down control
-
----
-
-## 🔄 Operation
-
-| Signal      | Function                       |
-| ----------- | ------------------------------ |
-| rst = 1     | Reset counter to 0 immediately |
-| load = 1    | Load input data                |
-| up_down = 1 | Count up                       |
-| up_down = 0 | Count down                     |
+- 🔢 8-bit Counter
+- 🔄 Up/Down Control
+- ⚡ Asynchronous Reset (Immediate)
+- ⏱️ Synchronous Load (Clock dependent)
+- 🧪 Fully Simulated
 
 ---
 
-## 📷 Simulation Result
+## 🧠 Working Principle
 
-![Counter Waveform](waveform_counter.png)
+The counter operates based on priority:
+
+1. **Reset (Highest Priority)**
+   - `rst = 1` → Counter resets to `0` instantly
+
+2. **Load**
+   - `load = 1` → Loads input `data` at next clock edge
+
+3. **Count Operation**
+   - `up_down = 1` → Count Up
+   - `up_down = 0` → Count Down
+
+---
+
+## 📊 Operation Table
+
+| Signal Condition | Output Behavior |
+|----------------|---------------|
+| rst = 1        | count = 0     |
+| load = 1       | count = data  |
+| up_down = 1    | count++       |
+| up_down = 0    | count--       |
+
+---
+
+## 🧪 Simulation Result
+
+> The waveform verifies:
+- Reset works instantly  
+- Load happens at clock edge  
+- Up counting increases sequentially  
+- Down counting decreases correctly  
+
+![Waveform](waveform_counter.png)
 
 ---
 
 ## 🛠️ Tools Used
+- 💻 Verilog HDL
+- ⚙️ Icarus Verilog
+- 📊 GTKWave
+- 🌐 GitHub
 
-* Verilog HDL
-* Icarus Verilog
-* GTKWave
+---
+
+## 📌 Key Concepts
+- Synchronous vs Asynchronous Control
+- Sequential Logic Design
+- Counter Design
+- Clock-driven circuits
 
 ---
 
 ## ✅ Conclusion
-
-Successfully implemented an 8-bit up/down counter with asynchronous reset and synchronous load. Simulation results verify correct counting behavior.
+Successfully implemented and verified an **8-bit Up/Down Counter** with:
+- Accurate counting behavior  
+- Correct priority handling  
+- Proper waveform validation  
 
 ---
 
 ## 👨‍💻 Author
-
-Pawan Kushwah
-B.Tech ECE, HNBGU
+**Pawan Kushwah**  
+B.Tech ECE, HNB Garhwal University
