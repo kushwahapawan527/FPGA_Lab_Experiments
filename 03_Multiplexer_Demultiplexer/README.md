@@ -2,7 +2,7 @@
 
 ## 🎯 Objective
 
-To design and simulate Multiplexer (MUX) and Demultiplexer (DEMUX) circuits using Verilog HDL.
+To design and simulate **Multiplexer (MUX)** and **Demultiplexer (DEMUX)** using Verilog HDL and verify their behavior using waveform analysis.
 
 ---
 
@@ -10,7 +10,7 @@ To design and simulate Multiplexer (MUX) and Demultiplexer (DEMUX) circuits usin
 
 ## 📘 Description
 
-A multiplexer selects one input from multiple inputs based on select lines.
+A Multiplexer (MUX) selects one input from multiple inputs based on select lines and forwards it to a single output.
 
 ---
 
@@ -27,9 +27,14 @@ A multiplexer selects one input from multiple inputs based on select lines.
 
 ## ⚙️ Working
 
-* 4 inputs → I0, I1, I2, I3
-* 2 select lines → S1, S0
-* Output depends on select lines
+* Inputs: **I0, I1, I2, I3**
+* Select Lines: **S1, S0**
+* Output depends on select lines:
+
+  * `00 → I0`
+  * `01 → I1`
+  * `10 → I2`
+  * `11 → I3`
 
 ---
 
@@ -43,7 +48,7 @@ A multiplexer selects one input from multiple inputs based on select lines.
 
 ## 📘 Description
 
-A demultiplexer routes a single input to one of multiple outputs based on select lines.
+A Demultiplexer (DEMUX) routes a single input to one of the multiple outputs based on select lines.
 
 ---
 
@@ -60,9 +65,11 @@ A demultiplexer routes a single input to one of multiple outputs based on select
 
 ## ⚙️ Working
 
-* 1 input → D
-* 2 select lines → S1, S0
-* Output is **one-hot** (only one output active at a time)
+* Input: **D**
+* Select Lines: **S1, S0**
+* Output is **one-hot encoded**
+
+  * Only one output HIGH at a time
 
 ---
 
@@ -74,26 +81,26 @@ A demultiplexer routes a single input to one of multiple outputs based on select
 
 # 🛠️ Tools Used
 
-* 🧠 Verilog HDL
-* ⚡ Icarus Verilog (Simulation)
-* 📊 GTKWave (Waveform Viewer)
-* 🌐 GitHub
+* 🔹 Verilog HDL
+* 🔹 Icarus Verilog (Simulation)
+* 🔹 GTKWave (Waveform Viewer)
+* 🔹 GitHub
 
 ---
 
-# 📌 Key Concepts
+# 🧠 Key Concepts
 
 * **Multiplexer (MUX):** Selects one input from many
 * **Demultiplexer (DEMUX):** Routes one input to many outputs
 * **Select Lines:** Control signal selection
-* **One-Hot Output:** Only one output is HIGH at a time
+* **One-Hot Encoding:** Only one output is HIGH at a time
 
 ---
 
 # ✅ Conclusion
 
-Successfully designed and simulated 4-to-1 Multiplexer and 1-to-4 Demultiplexer using Verilog HDL.
-The waveform verifies correct selection and routing based on select lines.
+The 4-to-1 Multiplexer and 1-to-4 Demultiplexer were successfully designed and simulated using Verilog HDL.
+The simulation waveforms confirm correct input selection and output routing based on select lines.
 
 ---
 
@@ -104,4 +111,3 @@ B.Tech Electronics & Communication Engineering
 HNB Garhwal University
 
 ---
-
