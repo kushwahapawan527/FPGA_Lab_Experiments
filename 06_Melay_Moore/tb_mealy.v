@@ -2,30 +2,45 @@
 
 module tb_mealy;
 
-reg clk, rst, x;
-wire y;
+    reg clk;
+    reg rst;
+    reg x;
+    wire y;
 
-mealy_seq uut (.clk(clk), .rst(rst), .x(x), .y(y));
+    // Instantiate DUT
+    mealy_seq uut (
+        .clk(clk),
+        .rst(rst),
+        .x(x),
+        .y(y)
+    );
 
-always #5 clk = ~clk;
+    // Clock generation
+    always #5 clk = ~clk;
 
-initial begin
-    $dumpfile("mealy.vcd");
-    $dumpvars(0, tb_mealy);
+    initial begin
+        // VCD dump
+        $dumpfile("mealy.vcd");
+        $dumpvars(0, tb_mealy);
 
-    clk = 0; rst = 1; x = 0;
-    #10 rst = 0;
+        clk = 0;
+        rst = 1;
+        x = 0;
 
-    // Input stream: 1011011 (overlap)
-    #10 x=1;
-    #10 x=0;
-    #10 x=1;
-    #10 x=1; // detect here
-    #10 x=0;
-    #10 x=1;
-    #10 x=1; // detect again
+        // Reset release
+        #10 rst = 0;
 
-    #20 $finish;
-end
+        // Input sequence
+        #10 x = 1;
+        #10 x = 0;
+        #10 x = 1;
+        #10 x = 1;  // detection point
+        #10 x = 0;
+        #10 x = 1;
+        #10 x = 1;
+        #10 x = 1;
+
+        #50 $finish;
+    end
 
 endmodule
