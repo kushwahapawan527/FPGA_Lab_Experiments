@@ -1,0 +1,23 @@
+module tb_multiplier_4bit;
+
+    reg [3:0] A, B;
+    wire [7:0] P;
+
+    multiplier_4bit uut (
+        .A(A),
+        .B(B),
+        .P(P)
+    );
+
+    initial begin
+        $dumpfile("mult4.vcd");
+        $dumpvars(0, tb_multiplier_4bit);
+
+        A=3; B=2;
+        #10 A=5; B=3;
+        #10 A=7; B=7;
+
+        #20 $finish;
+    end
+
+endmodule
