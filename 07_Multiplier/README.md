@@ -1,4 +1,4 @@
-# ✖️ Experiment 7: 8-bit Multiplier & 4-bit Multiplier (FPGA)
+#  Experiment 7: 8-bit Multiplier & 4-bit Multiplier (FPGA)
 
 ## 🎯 Objective
 To design and simulate an 8-bit multiplier and implement a 4-bit multiplier using Verilog HDL and FPGA.
