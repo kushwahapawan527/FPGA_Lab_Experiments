@@ -8,15 +8,23 @@ module alu (
 
 always @(*) begin
     case (sel)
+
+        // Arithmetic Operations
         3'b000: {carry, result} = A + B;   // ADD
         3'b001: {carry, result} = A - B;   // SUB
-        3'b010: result = A & B;            // AND
-        3'b011: result = A | B;            // OR
-        3'b100: result = A ^ B;            // XOR
-        3'b101: result = ~A;               // NOT
-        3'b110: result = A << 1;           // SHIFT LEFT
-        3'b111: result = A >> 1;           // SHIFT RIGHT
-        default: result = 8'b0;
+
+        // Logical Operations
+        3'b010: begin result = A & B; carry = 0; end
+        3'b011: begin result = A | B; carry = 0; end
+        3'b100: begin result = A ^ B; carry = 0; end
+        3'b101: begin result = ~A;    carry = 0; end
+
+        // Shift Operations
+        3'b110: begin result = A << 1; carry = 0; end
+        3'b111: begin result = A >> 1; carry = 0; end
+
+        default: begin result = 8'b0; carry = 0; end
+
     endcase
 end
 
